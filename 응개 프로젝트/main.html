@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Eternal Return 실험체 소개</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Eternal Return Experiment</h1>
+    </nav>
+    <div class="container">
+      <div class="sidebar">
+        <h2>무기 선택</h2>
+        <ul>
+          <li>
+            <input type="checkbox" id="pistol" onchange="filterExperiments()" />
+            <label for="pistol">권총</label>
+          </li>
+          <li>
+            <input type="checkbox" id="gloves" onchange="filterExperiments()" />
+            <label for="gloves">글러브</label>
+          </li>
+          <li>
+            <input type="checkbox" id="guitar" onchange="filterExperiments()" />
+            <label for="guitar">기타</label>
+          </li>
+          <li>
+            <input type="checkbox" id="dagger" onchange="filterExperiments()" />
+            <label for="dagger">단검</label>
+          </li>
+          <li>
+            <input type="checkbox" id="axe" onchange="filterExperiments()" />
+            <label for="axe">도끼</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="assaultRifle"
+              onchange="filterExperiments()"
+            />
+            <label for="assaultRifle">돌격 소총</label>
+          </li>
+          <li>
+            <input type="checkbox" id="rapier" onchange="filterExperiments()" />
+            <label for="rapier">레이피어</label>
+          </li>
+          <li>
+            <input type="checkbox" id="hammer" onchange="filterExperiments()" />
+            <label for="hammer">망치</label>
+          </li>
+          <li>
+            <input type="checkbox" id="bat" onchange="filterExperiments()" />
+            <label for="bat">방망이</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="crossbow"
+              onchange="filterExperiments()"
+            />
+            <label for="crossbow">석궁</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="dualSwords"
+              onchange="filterExperiments()"
+            />
+            <label for="dualSwords">쌍검</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="nunchaku"
+              onchange="filterExperiments()"
+            />
+            <label for="nunchaku">쌍절곤</label>
+          </li>
+          <li>
+            <input type="checkbox" id="arcana" onchange="filterExperiments()" />
+            <label for="arcana">아르카나</label>
+          </li>
+          <li>
+            <input type="checkbox" id="mace" onchange="filterExperiments()" />
+            <label for="mace">암기</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="greatsword"
+              onchange="filterExperiments()"
+            />
+            <label for="greatsword">양손검</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="sniperRifle"
+              onchange="filterExperiments()"
+            />
+            <label for="sniperRifle">저격총</label>
+          </li>
+          <li>
+            <input type="checkbox" id="spear" onchange="filterExperiments()" />
+            <label for="spear">창</label>
+          </li>
+          <li>
+            <input type="checkbox" id="whip" onchange="filterExperiments()" />
+            <label for="whip">채찍</label>
+          </li>
+          <li>
+            <input type="checkbox" id="camera" onchange="filterExperiments()" />
+            <label for="camera">카메라</label>
+          </li>
+          <li>
+            <input type="checkbox" id="tonfa" onchange="filterExperiments()" />
+            <label for="tonfa">톤파</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="throwing"
+              onchange="filterExperiments()"
+            />
+            <label for="throwing">투척</label>
+          </li>
+          <li>
+            <input type="checkbox" id="bow" onchange="filterExperiments()" />
+            <label for="bow">활</label>
+          </li>
+          <li>
+            <input
+              type="checkbox"
+              id="VF_hand"
+              onchange="filterExperiments()"
+            />
+            <label for="VF_hand">VF의수</label>
+          </li>
+        </ul>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="실험체 이름 검색" />
+          <button onclick="searchExperiments()">검색</button>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="experiment-container" id="experimentContainer">
+          <!-- 실험체 항목들 -->
+          <div
+            class="experiment-item"
+            data-weapons="dagger,axe,greatsword,dualSwords"
+            data-id="Jackie"
+          >
+            <img src="/img/profile/재키.webp" alt="실험체 1" />
+            <div class="text">재키</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="pistol,assaultRifle,sniperRifle"
+            data-id="Aya"
+          >
+            <img src="/img/profile/아야.webp" alt="실험체 2" />
+            <div class="text">아야</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="gloves,tonfa"
+            data-id="Hyunwoo"
+          >
+            <img src="/img/profile/현우.webp" alt="실험체 3" />
+            <div class="text">현우</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="hammer,bat"
+            data-id="Magnus"
+          >
+            <img src="/img/profile/매그너스.webp" alt="실험체 4" />
+            <div class="text">매그너스</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="rapier,greatsword,spear"
+            data-id="Fiora"
+          >
+            <img src="/img/profile/피오라.webp" alt="실험체 5" />
+            <div class="text">피오라</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="bow,crossbow"
+            data-id="Nadine"
+          >
+            <img src="/img/profile/나딘.webp" alt="실험체 6" />
+            <div class="text">나딘</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="throwing,mace"
+            data-id="Zahir"
+          >
+            <img src="/img/profile/자히르.webp" alt="실험체 7" />
+            <div class="text">자히르</div>
+          </div>
+          <div class="experiment-item" data-weapons="guitar" data-id="Hart">
+            <img src="/img/profile/하트.webp" alt="실험체 8" />
+            <div class="text">하트</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="pistol,assaultRifle"
+            data-id="Isol"
+          >
+            <img src="/img/profile/아이솔.webp" alt="실험체 9" />
+            <div class="text">아이솔</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="gloves,nunchaku"
+            data-id="Li_Dailin"
+          >
+            <img src="/img/profile/리 다이린.webp" alt="실험체 10" />
+            <div class="text">리 다이린</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="greatsword,dualSwords"
+            data-id="Yuki"
+          >
+            <img src="/img/profile/유키.webp" alt="실험체 11" />
+            <div class="text">유키</div>
+          </div>
+          <div class="experiment-item" data-weapons="bow,mace" data-id="Hyejin">
+            <img src="/img/profile/혜진.webp" alt="실험체 12" />
+            <div class="text">혜진</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="spear,dagger"
+            data-id="Xiukai"
+          >
+            <img src="/img/profile/쇼우.webp" alt="실험체 13" />
+            <div class="text">쇼우</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="mace,throwing"
+            data-id="Sissela"
+          >
+            <img src="/img/profile/시셀라.webp" alt="실험체 14" />
+            <div class="text">시셀라</div>
+          </div>
+          <div class="experiment-item" data-weapons="rapier" data-id="Chiara">
+            <img src="/img/profile/키아라.webp" alt="실험체 15" />
+            <div class="text">키아라</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="throwing"
+            data-id="Adriana"
+          >
+            <img src="/img/profile/아드리아나.webp" alt="실험체 16" />
+            <div class="text">아드리아나</div>
+          </div>
+          <div class="experiment-item" data-weapons="dagger" data-id="Shoichi">
+            <img src="/img/profile/쇼이치.webp" alt="실험체 17" />
+            <div class="text">쇼이치</div>
+          </div>
+          <div class="experiment-item" data-weapons="pistol" data-id="Silvia">
+            <img src="/img/profile/실비아.webp" alt="실험체 18" />
+            <div class="text">실비아</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="mace,arcana"
+            data-id="Emma"
+          >
+            <img src="/img/profile/엠마.webp" alt="실험체 19" />
+            <div class="text">엠마</div>
+          </div>
+          <div class="experiment-item" data-weapons="whip" data-id="Lenox">
+            <img src="/img/profile/레녹스.webp" alt="실험체 20" />
+            <div class="text">레녹스</div>
+          </div>
+          <div class="experiment-item" data-weapons="pistol" data-id="Rozzi">
+            <img src="/img/profile/로지.webp" alt="실험체 21" />
+            <div class="text">로지</div>
+          </div>
+          <div class="experiment-item" data-weapons="bat" data-id="Luke">
+            <img src="/img/profile/루크.webp" alt="실험체 22" />
+            <div class="text">루크</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="dagger,dualSwords"
+            data-id="Cathy"
+          >
+            <img src="/img/profile/캐시.webp" alt="실험체 23" />
+            <div class="text">캐시</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="rapier,bat"
+            data-id="Adela"
+          >
+            <img src="/img/profile/아델라.webp" alt="실험체 24" />
+            <div class="text">아델라</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="sniperRifle"
+            data-id="Bernice"
+          >
+            <img src="/img/profile/버니스.webp" alt="실험체 25" />
+            <div class="text">버니스</div>
+          </div>
+          <div class="experiment-item" data-weapons="pistol" data-id="Barbara">
+            <img src="/img/profile/바바라.webp" alt="실험체 26" />
+            <div class="text">바바라</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="pistol,greatsword,mace,tonfa"
+            data-id="Alex"
+          >
+            <img src="/img/profile/알렉스.webp" alt="실험체 27" />
+            <div class="text">알렉스</div>
+          </div>
+          <div class="experiment-item" data-weapons="hammer,bat" data-id="Sua">
+            <img src="/img/profile/수아.webp" alt="실험체 28" />
+            <div class="text">수아</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="gloves,tonfa"
+            data-id="Leon"
+          >
+            <img src="/img/profile/레온.webp" alt="실험체 29" />
+            <div class="text">레온</div>
+          </div>
+          <div class="experiment-item" data-weapons="hammer" data-id="Eleven">
+            <img src="/img/profile/일레븐.webp" alt="실험체 30" />
+            <div class="text">일레븐</div>
+          </div>
+          <div class="experiment-item" data-weapons="bow" data-id="Rio">
+            <img src="/img/profile/리오.webp" alt="실험체 31" />
+            <div class="text">리오</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="throwing"
+            data-id="William"
+          >
+            <img src="/img/profile/윌리엄.webp" alt="실험체 32" />
+            <div class="text">윌리엄</div>
+          </div>
+          <div class="experiment-item" data-weapons="gloves" data-id="Nicky">
+            <img src="/img/profile/니키.webp" alt="실험체 33" />
+            <div class="text">니키</div>
+          </div>
+          <div class="experiment-item" data-weapons="camera" data-id="Nathapon">
+            <img src="/img/profile/나타폰.webp" alt="실험체 34" />
+            <div class="text">나타폰</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="gloves,tonfa"
+            data-id="Jan"
+          >
+            <img src="/img/profile/얀.webp" alt="실험체 35" />
+            <div class="text">얀</div>
+          </div>
+          <div class="experiment-item" data-weapons="throwing" data-id="Eva">
+            <img src="/img/profile/이바.webp" alt="실험체 36" />
+            <div class="text">이바</div>
+          </div>
+          <div class="experiment-item" data-weapons="dagger" data-id="Daniel">
+            <img src="/img/profile/다니엘.webp" alt="실험체 37" />
+            <div class="text">다니엘</div>
+          </div>
+          <div class="experiment-item" data-weapons="pistol" data-id="Jenny">
+            <img src="/img/profile/제니.webp" alt="실험체 38" />
+            <div class="text">제니</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="dualSwords,rapier"
+            data-id="Camilo"
+          >
+            <img src="/img/profile/카밀로.webp" alt="실험체 39" />
+            <div class="text">카밀로</div>
+          </div>
+          <div class="experiment-item" data-weapons="mace" data-id="Chloe">
+            <img src="/img/profile/클로에.webp" alt="실험체 40" />
+            <div class="text">클로에</div>
+          </div>
+          <div class="experiment-item" data-weapons="arcana" data-id="Johann">
+            <img src="/img/profile/요한.webp" alt="실험체 41" />
+            <div class="text">요한</div>
+          </div>
+          <div class="experiment-item" data-weapons="arcana" data-id="Bianca">
+            <img src="/img/profile/비앙카.webp" alt="실험체 42" />
+            <div class="text">비앙카</div>
+          </div>
+          <div class="experiment-item" data-weapons="throwing" data-id="Celine">
+            <img src="/img/profile/셀린.webp" alt="실험체 43" />
+            <div class="text">셀린</div>
+          </div>
+          <div class="experiment-item" data-weapons="VF_hand" data-id="Echion">
+            <img src="/img/profile/에키온.webp" alt="실험체 44" />
+            <div class="text">에키온</div>
+          </div>
+          <div class="experiment-item" data-weapons="whip" data-id="Mai">
+            <img src="/img/profile/마이.webp" alt="실험체 45" />
+            <div class="text">마이</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="greatsword"
+            data-id="Aiden"
+          >
+            <img src="/img/profile/에이든.webp" alt="실험체 46" />
+            <div class="text">에이든</div>
+          </div>
+          <div class="experiment-item" data-weapons="whip" data-id="Laura">
+            <img src="/img/profile/라우라.webp" alt="실험체 47" />
+            <div class="text">라우라</div>
+          </div>
+          <div class="experiment-item" data-weapons="bat" data-id="Tia">
+            <img src="/img/profile/띠아.webp" alt="실험체 48" />
+            <div class="text">띠아</div>
+          </div>
+          <div class="experiment-item" data-weapons="spear" data-id="Felix">
+            <img src="/img/profile/펠릭스.webp" alt="실험체 49" />
+            <div class="text">펠릭스</div>
+          </div>
+          <div class="experiment-item" data-weapons="rapier" data-id="Elena">
+            <img src="/img/profile/엘레나.webp" alt="실험체 50" />
+            <div class="text">엘레나</div>
+          </div>
+          <div class="experiment-item" data-weapons="guitar" data-id="Priya">
+            <img src="/img/profile/프리야.webp" alt="실험체 51" />
+            <div class="text">프리야</div>
+          </div>
+          <div class="experiment-item" data-weapons="arcana" data-id="Adina">
+            <img src="/img/profile/아디나.webp" alt="실험체 52" />
+            <div class="text">아디나</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="axe,hammer"
+            data-id="Markus"
+          >
+            <img src="/img/profile/마커스.webp" alt="실험체 53" />
+            <div class="text">마커스</div>
+          </div>
+          <div class="experiment-item" data-weapons="crossbow" data-id="Karla">
+            <img src="/img/profile/칼라.webp" alt="실험체 54" />
+            <div class="text">칼라</div>
+          </div>
+          <div class="experiment-item" data-weapons="axe" data-id="Estelle">
+            <img src="/img/profile/에스텔.webp" alt="실험체 55" />
+            <div class="text">에스텔</div>
+          </div>
+          <div class="experiment-item" data-weapons="nunchaku" data-id="Piolo">
+            <img src="/img/profile/피올로.webp" alt="실험체 56" />
+            <div class="text">피올로</div>
+          </div>
+          <div class="experiment-item" data-weapons="camera" data-id="Martina">
+            <img src="/img/profile/마르티나.webp" alt="실험체 57" />
+            <div class="text">마르티나</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="assaultRifle"
+            data-id="Haze"
+          >
+            <img src="/img/profile/헤이즈.webp" alt="실험체 58" />
+            <div class="text">헤이즈</div>
+          </div>
+          <div class="experiment-item" data-weapons="tonfa" data-id="Isaac">
+            <img src="/img/profile/아이작.webp" alt="실험체 59" />
+            <div class="text">아이작</div>
+          </div>
+          <div class="experiment-item" data-weapons="mace" data-id="Tazia">
+            <img src="/img/profile/타지아.webp" alt="실험체 60" />
+            <div class="text">타지아</div>
+          </div>
+          <div class="experiment-item" data-weapons="throwing" data-id="Irem">
+            <img src="/img/profile/이렘.webp" alt="실험체 61" />
+            <div class="text">이렘</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="sniperRifle"
+            data-id="Theodore"
+          >
+            <img src="/img/profile/테오도르.webp" alt="실험체 62" />
+            <div class="text">테오도르</div>
+          </div>
+          <div class="experiment-item" data-weapons="dagger" data-id="Ly_Anh">
+            <img src="/img/profile/이안.webp" alt="실험체 63" />
+            <div class="text">이안</div>
+          </div>
+          <div class="experiment-item" data-weapons="arcana" data-id="Vanya">
+            <img src="/img/profile/바냐.webp" alt="실험체 64" />
+            <div class="text">바냐</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="greatsword"
+            data-id="Debi_Marlene"
+          >
+            <img src="/img/profile/데비&마들렌.webp" alt="실험체 65" />
+            <div class="text">데비&마를렌</div>
+          </div>
+          <div class="experiment-item" data-weapons="arcana" data-id="Arda">
+            <img src="/img/profile/아르다.webp" alt="실험체 66" />
+            <div class="text">아르다</div>
+          </div>
+          <div class="experiment-item" data-weapons="axe" data-id="Abigail">
+            <img src="/img/profile/아비게일.webp" alt="실험체 67" />
+            <div class="text">아비게일</div>
+          </div>
+          <div class="experiment-item" data-weapons="gloves" data-id="Alonso">
+            <img src="/img/profile/알론소.webp" alt="실험체 68" />
+            <div class="text">알론소</div>
+          </div>
+          <div class="experiment-item" data-weapons="pistol" data-id="Leni">
+            <img src="/img/profile/레니.webp" alt="실험체 69" />
+            <div class="text">레니</div>
+          </div>
+          <div class="experiment-item" data-weapons="mace" data-id="Tsubame">
+            <img src="/img/profile/츠바메.webp" alt="실험체 70" />
+            <div class="text">츠바메</div>
+          </div>
+          <div class="experiment-item" data-weapons="axe" data-id="Kenneth">
+            <img src="/img/profile/케네스.webp" alt="실험체 71" />
+            <div class="text">케네스</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="sniperRifle"
+            data-id="Katja"
+          >
+            <img src="/img/profile/카티야.webp" alt="실험체 72" />
+            <div class="text">카티야</div>
+          </div>
+          <div
+            class="experiment-item"
+            data-weapons="arcana"
+            data-id="Charlotte"
+          >
+            <img src="/img/profile/샬럿.webp" alt="실험체 73" />
+            <div class="text">샬럿</div>
+          </div>
+          <div class="experiment-item" data-weapons="bat" data-id="Darko">
+            <img src="/img/profile/다르코.webp" alt="실험체 74" />
+            <div class="text">다르코</div>
+          </div>
+          <div class="experiment-item" data-weapons="guitar" data-id="Lenore">
+            <img src="/img/profile/르노어.webp" alt="실험체 75" />
+            <div class="text">르노어</div>
+          </div>
+          <div class="experiment-item" data-weapons="bat" data-id="Garnet">
+            <img src="/img/profile/가넷.webp" alt="실험체 76" />
+            <div class="text">가넷</div>
+          </div>
+          <div class="experiment-item" data-weapons="arcana" data-id="Yumin">
+            <img src="/img/profile/유민.webp" alt="실험체 77" />
+            <div class="text">유민</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js" defer></script>
+  </body>
+</html>

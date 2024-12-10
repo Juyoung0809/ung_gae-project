@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    href="experience.css"
+    rel="stylesheet"/>
+    <title>실험체 설명</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Eternal Return Experiment</h1>
+      <button class="home" onclick="location.href='/main.html'">
+        홈으로
+      </button>
+    </nav>
+    <div class="main-container">
+      <div class="left-container">
+        <div class="image-display" id="imageDisplay"></div>
+        <div class="image-selector-container"></div>
+      </div>
+      <div class="right-container">
+        <table class="experiment_information_table">
+        </table>
+        <div class="options">
+          <button class="option-button" data-content="PASSIVE">패시브</button>
+          <button class="option-button" data-content="Q_skill">Q 스킬</button>
+          <button class="option-button" data-content="W_skill">W 스킬</button>
+          <button class="option-button" data-content="E_skill">E 스킬</button>
+          <button class="option-button" data-content="R_skill">R 스킬</button>
+        </div>
+        <div class="content-display">
+          <div class="skill-display">
+            <div class="skill-text"></div>
+          </div>
+          <div class="skill_information">
+          </div>
+        </div>
+      </div>
+    </div class="main-container">
+      <script src="experience.js" defer></script>
+  </body>
+</html>

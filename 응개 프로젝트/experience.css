@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* nav를 상단에 배치하기 위해 column 사용 */
+  height: 100vh;
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+nav {
+  background-color: #34495e;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.left-container {
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.image-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* 흰색 */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.image-selector-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-selector {
+  padding: 10px 20px;
+  background-color: rgb(54, 57, 68); /* 짙은 검정 회색 */
+  color: #ffffff; /* 흰색 텍스트 */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 20%;
+  text-align: center;
+}
+
+.image-selector:hover {
+  background-color: #555555; /* 밝은 회색으로 전환 */
+}
+
+.image-display img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0; /* 초기 상태 */
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+}
+
+.image-display img.visible {
+  opacity: 1; /* 보여질 때 */
+}
+
+.main-container {
+  flex: 1; /* 남은 공간을 차지 */
+  display: flex; /* 기존의 왼쪽/오른쪽 컨테이너 배치를 유지 */
+}
+
+.experience_table {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.right-container {
+  width: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* 테이블을 수직 배치 */
+  justify-content: flex-start; /* 위쪽으로 정렬 */
+  align-items: stretch; /* 가로로 꽉 채움 */
+  background-color: #f0f0f0;
+}
+
+.experiment_information_table {
+  width: 100%; /* 테이블 너비 전체 */
+  border-collapse: collapse; /* 셀 간격 제거 */
+  background-color: #ffffff; /* 기본 테이블 배경 */
+  border: 1px solid #ddd; /* 테두리 색상 */
+  border-radius: 8px; /* 모서리를 둥글게 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 자연스러운 그림자 */
+  margin-top: 0; /* 간격 없이 위로 붙임 */
+}
+
+.experiment_information_table td {
+  border: 1px solid #e5e5e5; /* 셀 경계선 */
+  padding: 15px 20px; /* 셀 내부 여백 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  font-size: 16px; /* 텍스트 크기 */
+  color: #333; /* 텍스트 색상 */
+  text-align: center;
+}
+
+/* 기준 값 (왼쪽 셀)의 배경색 */
+.experiment_information_table td:first-child {
+  background-color: #34495e; /* 짙은 블루 그레이 */
+  color: #ffffff; /* 흰색 텍스트 */
+  font-weight: bold; /* 굵은 텍스트 */
+  width: 30%; /* 첫 번째 열 너비 */
+}
+
+/* 정보 값 (오른쪽 셀)의 배경색 */
+.experiment_information_table td:last-child {
+  background-color: #ffffff; /* 흰색 */
+  color: #333; /* 진한 텍스트 */
+  width: 70%; /* 두 번째 열 너비 */
+}
+
+.home {
+  background-color: #2e4255;
+  border: 0px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+* {
+  font-family: "Hahmlet", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 선택지 버튼 스타일 */
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.option-button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #2e4255;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option-button:hover {
+  background-color: #1e2d3a;
+}
+
+/* 콘텐츠 표시 영역 스타일 */
+.content-display {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.skill-display {
+  display: flex; /* 이미지와 텍스트를 나란히 정렬 */
+  align-items: flex-start; /* 텍스트가 이미지 상단과 정렬 */
+  gap: 20px; /* 이미지와 텍스트 사이 간격 */
+}
+
+.skill-display img {
+  max-width: 150px; /* 이미지 최대 너비 */
+  max-height: 200px; /* 이미지 최대 높이 */
+  border-radius: 10px; /* 둥근 모서리 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.skill-text {
+  flex: 1; /* 텍스트가 남은 공간을 차지 */
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.skill_information {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  max-width: 100%; /* 부모 컨테이너 크기에 맞추기 */
+  word-wrap: break-word; /* 긴 단어 줄바꿈 */
+  overflow: hidden; /* 내용이 넘칠 경우 숨기기 */
+}
+
+.skill-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-name {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.skill-image {
+  width: 90px;
+}
