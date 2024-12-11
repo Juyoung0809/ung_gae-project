@@ -52,3 +52,12 @@ function searchExperiments() {
       name.includes(query) || query === "" ? "block" : "none";
   });
 }
+
+// 뒤로 가기 시 체크박스 초기화
+window.onload = () => {
+  document
+    .querySelectorAll('.sidebar input[type="checkbox"]')
+    .forEach((checkbox) => {
+      checkbox.checked = false; // 체크박스 초기화
+    });
+};
